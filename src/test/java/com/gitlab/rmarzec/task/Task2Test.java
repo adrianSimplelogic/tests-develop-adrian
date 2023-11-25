@@ -24,7 +24,7 @@ public class Task2Test {
         for (WebElement element : webDriver.findElements(By.cssSelector("a[lang]"))){
             if (element.getAttribute("lang").contains("en")) {
                 System.out.println(element.getAttribute("textContent") + " " + element.getAttribute("href"));
-            } else if (!element.getAttribute("lang").contains("en")) {
+            } else {
                 System.out.println(element.getAttribute("textContent"));
             }
         }

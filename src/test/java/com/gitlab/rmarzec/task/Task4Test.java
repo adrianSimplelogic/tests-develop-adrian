@@ -31,8 +31,8 @@ public class Task4Test {
         new WebDriverWait(webDriver, 10).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[aria-label='Accept the use of cookies and other data for the purposes described']"))).click();
         new WebDriverWait(webDriver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("ytd-rich-grid-renderer")));
 
-        List<WebElement> tiles = webDriver.findElements(By.xpath("//ytd-rich-grid-renderer//ytd-rich-grid-media"));
-        for (int i = 0; i < 12; i++) {
+        List<WebElement> tiles = webDriver.findElements(By.cssSelector("#content ytd-rich-grid-media"));
+        for (int i = 0; i < 12 && i < tiles.size(); i++) {
             WebElement tileElement = tiles.get(i);
 
             YTTile ytTile = new YTTile();
